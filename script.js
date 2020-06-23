@@ -1,5 +1,6 @@
-var current=1,count;
-var file_source=[
+var current = 1, count;
+var level=0;
+var file_source = [
     [
         'Accuracy',
         'the quality or state of being correct or precise. Eg-"we have confidence in the accuracy of the statistics"'
@@ -23,52 +24,48 @@ var file_source=[
     [
         'Adroitness',
         'cleverness or skill. Eg-" he lacks political adroitness"'
-    ], 
+    ],
     [
         'Adventure',
         'an unusual and exciting or daring experience. Eg-"her recent adventures in Italy"'
     ],
-    [ 
+    [
         'Affection',
         'a gentle feeling of fondness or liking . Eg-"she felt affection for the wise old lady"'
     ],
-    [ 
+    [
         'Affluence',
-        'the state of having a great deal of money; wealth.a sign of our growing affluence'
+        'the state of having a great deal of money; wealth.Eg-"a sign of our growing affluence"'
     ],
-    [ 
-        'Affluence',
-        'the state of having a great deal of money; wealth.a sign of our growing affluence'
-    ],
-    [ 
+    [
         'Aggressive',
-        'ready or likely to attack or confront; characterized by or resulting from aggression.hes very uncooperative and aggressive'
+        'ready or likely to attack or confront; characterized by or resulting from aggression.Eg-"hes very uncooperative and aggressive"'
     ],
-    [ 
+    [
         'Agility',
-        'ability to move quickly and easily.though he was without formal training as dancer or athlete, his physical agility was inexhaustible'
+        'ability to move quickly and easily.Eg-"though he was without formal training as dancer or athlete, his physical agility was inexhaustible"'
     ],
-    [ 
+    [
         'Alertness',
         'the quality of being alert.Walsall were indebted to the bravery and alertness of their goalkeeper'
     ],
-    [ 
+    [
         'Altruism',
         'disinterested and selfless concern for the well-being of others.some may choose to work with vulnerable elderly people out of altruism'
     ],
-    [ 
+    [
         'Ambition',
         'a strong desire to do or achieve something.her ambition was to become a pilot'
     ],
-    [ 
+    [
         'Amusement',
         'the state or experience of finding something funny.we looked with amusement at our horoscopes'
     ],
-    [ 
+    [
         'Anticipation',
         'the action of anticipating something; expectation or prediction.her eyes sparkled with anticipation'
     ],
-    [ 
+    [
         'Appreciation',
         'recognition and enjoyment of the good qualities of someone or something.I smiled in appreciation'
     ],
@@ -113,7 +110,7 @@ var file_source=[
         'a feeling of reverential respect mixed with fear or wonder.they gazed in awe at the small mountain of diamonds'
     ],
     [
-       'Balance',
+        'Balance',
         'an even distribution of weight enabling someone or something to remain upright and steady.she lost her balance and fell'
     ],
     [
@@ -123,33 +120,86 @@ var file_source=[
     [
         'Being The Best',
         ''
-    ]      
+    ]
 
 
 ];
-$(document).ready(function(){
-    $("#NoButton").click(function(){
+$(document).ready(function () {
+    $("#NoButton").click(function () {
         $("#quality").text(file_source[current][0])
-      $("#Quality_desc").text(file_source[current][1])
-      current++;
+        $("#Quality_desc").text(file_source[current][1])
+        current++;
     });
-  });
-  $(document).ready(function(){
-    $("#YesButton").click(function(){
+});
+$(document).ready(function () {
+    $("#YesButton").click(function () {
         $("#quality").text(file_source[current][0])
-      $("#Quality_desc").text(file_source[current][1])
-      current++;
-      var x = document.getElementById("Selection_count").textContent;
-      count=parseInt(x);
-      count++;
-      document.getElementById("Selection_count").textContent=count+"";
-      $("#Second_Row").append("<label class='ql' id='ql'>"+file_source[current][0]+"</label>")
-      file_source[current][2]='Yes';
-      
+        $("#Quality_desc").text(file_source[current][1])
+        current++;
+        var x = document.getElementById("Selection_count").textContent;
+        count = parseInt(x);
+        count++;
+        document.getElementById("Selection_count").textContent = count + "";
+        $("#Second_Row").append("<label class='ql' id='ql'>" + file_source[current - 2][0] + "</label>")
+        file_source[current][2] = 'Yes';
     });
-  });    
-        
-    
+});
+$(document).ready(function () {
+    $("#btSubmit").click(function () {
+        if(level==0){    
+            if (count >= 24) {
+                count=0;
+                document.getElementById("Selection_count").textContent = count + "";
+                current = 0;
+                alert('submitted');
+                $('.ql').remove();
+                $("#quality").text(file_source[current][0])
+                $("#Quality_desc").text(file_source[current][1])
+                current++;
+                level++;
+            }
+            else {
+                alert('Select atleast 24 qualities');
+                
+            }
+        }
+        else if(level==1){
+            if(count==24){
+                count=0;
+                document.getElementById("Selection_count").textContent = count + "";
+                current = 0;
+                alert('submitted');
+                $('.ql').remove();
+                $("#quality").text(file_source[current][0])
+                $("#Quality_desc").text(file_source[current][1])
+                current++;
+                level++;
+            }else {
+                alert('Select only 24 qualities');    
+            }
+        }
+        else if(level==2){
+            if(count==6){
+                count=0;
+                document.getElementById("Selection_count").textContent = count + "";
+                current = 0;
+                alert('submitted');
+                $('.ql').remove();
+                $("#quality").text(file_source[current][0])
+                $("#Quality_desc").text(file_source[current][1])
+                current++;
+            }else {
+                alert('Select only 6 qualities'); 
+            }
+        }
+    });
+
+});
+
+
+
+
+
 
 
 
