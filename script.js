@@ -1,5 +1,9 @@
 var current = 1, count;
 var level=0;
+var divValue,value='';
+const list_items=document.querySelectorAll('.list-item');
+const list=document.querySelectorAll('.list');
+var draggeditem='',i,j;
 var file_source = [
     [
         'Accuracy',
@@ -188,13 +192,52 @@ $(document).ready(function () {
                 $("#quality").text(file_source[current][0])
                 $("#Quality_desc").text(file_source[current][1])
                 current++;
+                window.location.href="ui2.html";
             }else {
                 alert('Select only 6 qualities'); 
             }
         }
     });
-
+    /* $(document).ready(function () {
+        function GetValue() {
+            $(divValue).empty().remove();
+            values='';
+            $('.input').each(function(){
+                divValue=$(document.getElementById("ql"));
+            });
+            $(values);=>$("#quality");
+        }
+    })*/
 });
+    $(function (){
+        $("#list").sortable();
+    });
+       /* for( i=0;i<list_items;i++)
+        { 
+            const item=list_items[i];
+            $(item).on('dragstart',function(e){
+                console.log('dragstart',e);
+                draggedItem = this;
+            });
+                setTimeout(function(){
+                    item.style.display = 'none';
+                },0);
+            });
+
+            $(item).bind('dragend',function(){
+                setTimeout(function(){
+                    draggedItem.style.display = 'block';
+			        draggedItem = null;
+                },0);
+            });
+            for(j=0;j<list.length;j--)
+            {
+                
+            }
+        }*/
+
+   
+
 
 
 
