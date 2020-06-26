@@ -148,6 +148,35 @@ $(document).ready(function () {
         file_source[current][2] = 'Yes';
     });
 });
+$(document).ready(function(){
+    $("#BackButton").click(function(){
+        next=current-1;
+        for (i=next;i>=0; i--) 
+        {
+            if(file_source[i][3]==(Sub+''))
+            {
+                if(file_source[i][2]=='1')
+                next--;
+                else
+                break;
+            }
+            else
+            next--;
+        }
+        if(next==-1)
+        {
+        alert("Sorry, No More Qualities present now");
+        next=current+1;
+        }
+        else
+        {
+            $("#quality").text(file_source[next][0])
+            $("#Quality_desc").text(file_source[next][1])
+            current=next;
+            next=current+1;
+        }
+    });
+});
 $(document).ready(function () {
     $("#btSubmit").click(function () {
         if(level==0){    
