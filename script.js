@@ -1,7 +1,5 @@
 var next=1,count=0,i,current=0,Sub=1;
 var element;
-$("#sort").hide();
-$('#table').hide();
 var file_source=[
     [
         'Accuracy',
@@ -184,10 +182,8 @@ var file_source=[
         '1'
     ]
 ];
-        
-       
 $(document).ready(function(){
-    $("#NoButton").click(function(){
+    $("#next").click(function(){
         for(i=next;i<(file_source.length-1);i++)
         {
             if(file_source[i][3]==(Sub+''))
@@ -204,13 +200,13 @@ $(document).ready(function(){
         $("#Quality_desc").text(file_source[next][1])
         current=next;
         if(next==(file_source.length-1))
-        alert("Sorry, No More Qualities present now");    
+        alert();    
         else
         next++;
     });
 });
 $(document).ready(function(){
-    $("#YesButton").click(function(){
+    $("#quality").click(function(){
         if (Sub==2 && count==24)
         alert("You can't select more than 24 qualities");
         else if (Sub==3 && count==6)
@@ -235,7 +231,7 @@ $(document).ready(function(){
             {
                 if(current!=next)
                 {
-                    $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current][0]+"</button>")
+                    $("#Second_Row").append("<li type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current][0]+"</li>")
                     file_source[current][2]='1';
                     count++;
                     document.getElementById("Selection_count").textContent=count+"";
@@ -245,7 +241,7 @@ $(document).ready(function(){
             }   
             else
             {
-                $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current][0]+"</button>")
+                $("#Second_Row").append("<li type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current][0]+"</li>")
                 file_source[current][2]='1';
                 current=next;
                 next++;
@@ -256,7 +252,7 @@ $(document).ready(function(){
     });
 });
 $(document).ready(function(){
-    $("#Backbutton").click(function(){
+    $("#prev").click(function(){
         next=current-1;
         for (i=next;i>=0; i--) 
         {
@@ -293,7 +289,7 @@ function labelfunc(num)
     document.getElementById("Selection_count").textContent=count+"";
 }
 $(document).ready(function(){
-    $("#btSubmit").click(function(){
+    $("#Sub").click(function(){
         if(Sub==1)
         {
             if(count<24)
@@ -397,7 +393,6 @@ $(document).ready(function(){
             {
                 alert("Your qualites are submitted. Now order the top 6 qualites");
                 Sub++;
-                $("#sort").show();
                 document.getElementById("Selection_count").textContent="Order top 6 qualites by giving top most quality the highest priority";
                 for(i=0;i<(file_source.length-1);i++)
                 {
@@ -407,30 +402,18 @@ $(document).ready(function(){
                         file_source[i][2]='0';
                     }
                 }
-                for(i=0;i<(file_source.length-1);i++)
-                {
-                    if(file_source[i][3]==(Sub+''))
-                    {
-                        next=i;
-                        break;
-                    }
-                }
-                var x = document.getElementById("main");
+                var x = document.getElementById("selectquality");
                 x.style.display = "none";
-                var n = document.getElementById("sort");
+                var n = document.getElementById("orderit");
                 n.style.display = "block";
                 var x = document.createElement("UL");
                 for(i=0;i<(file_source.length-1);i++)
                 {
                     if(file_source[i][3]=='4')
                     {
-                        var y = document.createElement("LI");
-                        var t = document.createTextNode(file_source[i][0]);
-                        y.appendChild(t);
-                        document.getElementById("list").appendChild(y);
+                        $("#sortable_quality").append('<li id="'+i+'">'+file_source[i][0]+'</li>');
                     }
                 }
-                
             }
             else
             alert("PLease select exact 6 qualities");
@@ -439,15 +422,15 @@ $(document).ready(function(){
         {
             alert("Congratulations, your qualities are submitted");
             document.getElementById("Selection_count").textContent="Your top qualities are shown below";
-            var x = document.getElementById("sort");
+            var x = document.getElementById("orderit");
             x.style.display = "none";
-            var m = document.getElementById("table");
+            var m = document.getElementById("FinalTable");
             m.style.display = "block";
-            var n = document.getElementById("last_row");
+            var n = document.getElementById("subm");
             n.style.display = "none";
-            var idsInOrder = $("#list").sortable("toArray");
+            var idsInOrder = $("#sortable_quality").sortable("toArray");
             for(i=0;i<6;i++)
-            $("#tbody").append('<tr><th>'+file_source[idsInOrder[i]][0]+'</th><th>'+file_source[idsInOrder[i]][1]+'</th></tr>');
+            $("#addquality").append('<tr><th>'+file_source[idsInOrder[i]][0]+'</th><th>'+file_source[idsInOrder[i]][1]+'</th></tr>');
         }
         else
         {
@@ -456,7 +439,7 @@ $(document).ready(function(){
     });
 });
 $(function() {
-    $( "#list" ).sortable();
+    $( "#sortable_quality" ).sortable();
 });
 
    

@@ -1,0 +1,127 @@
+#Selection_count {
+    background-color: dodgerblue;
+    text-align: center;
+    color: white;
+    padding-top: 15px;
+    height: 80px;
+}
+#quality {
+    background-color: black;
+    color:white;
+    text-align: center;
+    height: 80px;
+    padding-top: 15px;
+}
+#Quality_desc{
+    background-color: grey;
+    height:220px;
+    color:white;
+    text-align: center;
+    padding: 15px ;
+}
+#Second_Row{
+    background-color: rgba(108, 173, 238, 0.897);
+    color:white;
+    padding: 15px;
+    height: 380px;
+}
+#NoButton,#YesButton,#BackButton,#Sub {
+    width: 100%;
+}
+#orderit, #FinalTable {
+    display: none;
+}
+#sortable_quality {
+    list-style-type: none;
+    margin: 0; 
+    padding: 0;
+    width:25%; 
+    display: inline;
+}
+#sortable_quality li {
+    text-align: center;
+    height: 30px;
+    background: #cedc98;
+    border: 1px solid #DDDDDD;
+    color: #333333;
+}
+#orderit {
+    height: 200px;
+}
+a{
+    display:none;
+}
+#Sub{
+    background-color: rgb(51, 106, 158);
+}
+
+
+@media only screen and  (max-width: 414px) {
+    #Second_Row {
+        height:200px;
+        overflow-y: auto;
+        overflow-x:hidden;
+        padding:10px;
+        margin:4px 4px;
+    }
+
+    #Selection_count{
+        height:60px;
+    }
+
+    #quality{
+        height:60px;
+        padding-top:5px;
+    }
+
+    #Quality_desc{
+        height:160px;
+        overflow-y: auto;
+        overflow-x:hidden;
+        z-index:-1;
+        width:auto;
+    }
+    #NoButton,#YesButton,#BackButton,#Sub{
+        height:90%;
+        padding:0px;
+    }
+    a {
+        display:block;
+        text-decoration: none;
+        padding: 8px 16px;
+        margin-top:60px;
+        
+    }
+      
+    a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+      
+    .previous {
+        background-color: #57a5c9;
+        color: white;
+        float: left;
+    }
+      
+    .next {
+        background-color: #57a5c9;
+        color: white;
+        float: right;
+    }
+      
+    .round {
+        border-radius: 50%;
+    }
+
+    #NoButton,#YesButton,#BackButton{
+        display:none;
+    }
+
+    .Qual{
+        margin:2px;
+        border:1px solid black;
+        background-color: #6c7474;
+        text-align:center;
+    }
+}
