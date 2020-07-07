@@ -1,6 +1,6 @@
 #Selection_count {
     background-color: dodgerblue;
-    text-align: center;
+    text-align: right;
     color: white;
     padding-top: 15px;
     height: 80px;
@@ -55,6 +55,16 @@ a{
     background-color: rgb(51, 106, 158);
 }
 
+.btn-group{
+    color:black;
+    margin:auto;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    
+}
+
+
 
 @media only screen and  (max-width: 414px) {
     #Second_Row {
@@ -63,6 +73,10 @@ a{
         overflow-x:hidden;
         padding:10px;
         margin:4px 4px;
+    }
+    .btn-group{
+        color:#4f5253;
+        align-items:center;
     }
 
     #Selection_count{
@@ -89,38 +103,16 @@ a{
         display:block;
         text-decoration: none;
         padding: 8px 16px;
-        margin-top:60px;
+        color:black;
         
     }
-      
-    a:hover {
-        background-color: #ddd;
-        color: black;
-    }
-      
-    .previous {
-        background-color: #57a5c9;
-        color: white;
-        float: left;
-    }
-      
-    .next {
-        background-color: #57a5c9;
-        color: white;
-        float: right;
-    }
-      
-    .round {
-        border-radius: 50%;
-    }
-
+    
     #NoButton,#YesButton,#BackButton{
         display:none;
     }
 
     .Qual{
         margin:2px;
-        border:1px solid black;
         background-color: #6c7474;
         text-align:center;
     }
