@@ -176,12 +176,46 @@ var file_source=[
         '1'
     ],
     [
+        'Beauty',
+        'a combination of qualities, such as shape, colour, or form, that pleases the aesthetic senses, especially the sight. Eg-"I was struck by her beauty"',
+        '0',
+        '1'
+    ],
+    [
+        'Beauty',
+        'a combination of qualities, such as shape, colour, or form, that pleases the aesthetic senses, especially the sight. Eg-"I was struck by her beauty"',
+        '0',
+        '1'
+    ],
+    [
+        'Beauty',
+        'a combination of qualities, such as shape, colour, or form, that pleases the aesthetic senses, especially the sight. Eg-"I was struck by her beauty"',
+        '0',
+        '1'
+    ],
+    [
+        'Beauty',
+        'a combination of qualities, such as shape, colour, or form, that pleases the aesthetic senses, especially the sight. Eg-"I was struck by her beauty"',
+        '0',
+        '1'
+    ],
+    [
         '',
         '',
         '0',
         '1'
     ]
 ];
+function fcount(){
+    var msg=""
+    if(Sub==1)
+    msg="/24+";
+    else if(Sub==2)
+    msg="/24";
+    else if(Sub==3)
+    msg="/6";
+    return msg;
+}
 $(document).ready(function(){
     $("#next").click(function(){
         for(i=next;i<(file_source.length-1);i++)
@@ -234,7 +268,7 @@ $(document).ready(function(){
                     $("#Second_Row").append("<li type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current][0]+"</li>")
                     file_source[current][2]='1';
                     count++;
-                    document.getElementById("Selection_count").textContent=count+"/24+";
+                    document.getElementById("Selection_count").textContent=count+fcount();
                 }
                 alert("Sorry, No More Qualities present now"); 
                 current=next;
@@ -246,7 +280,7 @@ $(document).ready(function(){
                 current=next;
                 next++;
                 count++;
-                document.getElementById("Selection_count").textContent=count+"/24+";
+                document.getElementById("Selection_count").textContent=count+fcount();
             }
         }
     });
@@ -286,10 +320,10 @@ function labelfunc(num)
     element.parentNode.removeChild(element);
     file_source[num][2]='0';
     count--;
-    document.getElementById("Selection_count").textContent=count+"/24+";
+    document.getElementById("Selection_count").textContent=count+fcount();
 }
 $(document).ready(function(){
-    $("#Subm").click(function(){
+    $("#Sub").click(function(){
         if(Sub==1)
         {
             if(count<24)
@@ -299,7 +333,7 @@ $(document).ready(function(){
                 alert("Your qualites are submitted, Now please select exact 6 qualities");
                 count=0;
                 Sub=Sub+2;
-                document.getElementById("Selection_count").textContent=count+"";
+                document.getElementById("Selection_count").textContent=count+fcount();
                 for(i=0;i<(file_source.length-1);i++)
                 {
                     if(file_source[i][2]=='1')
@@ -328,7 +362,7 @@ $(document).ready(function(){
                 alert("Your qualites are submitted, Now please select exact 24 qualities");
                 count=0;
                 Sub++;
-                document.getElementById("Selection_count").textContent=count+"";
+                document.getElementById("Selection_count").textContent=count+fcount();
                 for(i=0;i<(file_source.length-1);i++)
                 {
                     if(file_source[i][2]=='1')
@@ -360,7 +394,7 @@ $(document).ready(function(){
                 alert("Your qualites are submitted, Now please select exact 6 qualities");
                 count=0;
                 Sub++;
-                document.getElementById("Selection_count").textContent=count+"";
+                document.getElementById("Selection_count").textContent=count+fcount();
                 for(i=0;i<(file_source.length-1);i++)
                 {
                     if(file_source[i][2]=='1')
@@ -394,6 +428,9 @@ $(document).ready(function(){
                 alert("Your qualites are submitted. Now order the top 6 qualites");
                 Sub++;
                 document.getElementById("Selection_count").textContent="Order top 6 qualites by giving top most quality the highest priority";
+                document.getElementById("Selection_count").style.height="25%";
+                document.getElementById("Selection_count").style.textAlign="center";
+                document.getElementById("Selection_count").style.padding="5px";
                 for(i=0;i<(file_source.length-1);i++)
                 {
                     if(file_source[i][2]=='1')
@@ -418,7 +455,15 @@ $(document).ready(function(){
             else
             alert("PLease select exact 6 qualities");
         }
-        else if(Sub==4)
+        else
+        {
+            alert("It is in the maintainence at the moment");
+        }
+    });
+});
+$(document).ready(function(){
+    $("#Sub2").click(function(){
+        if(Sub==4)
         {
             alert("Congratulations, your qualities are submitted");
             document.getElementById("Selection_count").textContent="Your top qualities are shown below";
@@ -426,7 +471,7 @@ $(document).ready(function(){
             x.style.display = "none";
             var m = document.getElementById("FinalTable");
             m.style.display = "block";
-            var n = document.getElementById("subm");
+            var n = document.getElementById("Sub2");
             n.style.display = "none";
             var idsInOrder = $("#sortable_quality").sortable("toArray");
             for(i=0;i<6;i++)
@@ -441,27 +486,4 @@ $(document).ready(function(){
 $(function() {
     $( "#sortable_quality" ).sortable();
 });
-
-/*window.onscroll = function() {myFunction()};
-
-// Get the header
-var header = document.getElementById("myheader");
-
-// Get the offset position of the navbar
-var sticky = header.offsetTop;
-
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
-
-/*$(document).ready(function(){
-    $("#quality").click(function(){
-        $("YesButton").click(function(){})
-    });
-});*/
 
