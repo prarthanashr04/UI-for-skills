@@ -1,5 +1,6 @@
 var next=1,count=0,i,current=0,Sub=1;
 var element;
+
 var file_source=[
     [
         'Accuracy',
@@ -242,9 +243,11 @@ $(document).ready(function(){
 $(document).ready(function(){
     $("#Yes").click(function(){
         if (Sub==2 && count==24)
-        alert("You can't select more than 24 qualities");
+        /*alert("You can't select more than 24 qualities");*/
+        $("Sub").prop('disabled', true);
         else if (Sub==3 && count==6)
-        alert("You can't select more than 6 qualities");
+        /*alert("You can't select more than 6 qualities");*/
+        $("Sub").prop('disabled', true);
         else
         {
             for(i=next;i<(file_source.length-1);i++)
@@ -270,7 +273,8 @@ $(document).ready(function(){
                     count++;
                     document.getElementById("Selection_count").textContent=count+fcount();
                 }
-                alert("Sorry, No More Qualities present now"); 
+                /*alert("Sorry, No More Qualities present now");*/ 
+                $("Sub").prop('disabled', true);
                 current=next;
             }   
             else
@@ -302,7 +306,7 @@ $(document).ready(function(){
         }
         if(next==-1)
         {
-        alert("Sorry, No More Qualities present now");
+        /*alert("Sorry, No More Qualities present now");*/
         next=current+1;
         }
         else
@@ -327,7 +331,8 @@ $(document).ready(function(){
         if(Sub==1)
         {
             if(count<24)
-            alert("Please select atleast 24 qualities");
+            /*alert("Please select atleast 24 qualities");*/
+            $("Sub").prop('disabled', true);
             else if(count==24)
             {
                 alert("Your qualites are submitted, Now please select exact 6 qualities");
@@ -419,7 +424,8 @@ $(document).ready(function(){
                 next++;
             }
             else
-            alert("PLease select exact 24 qualities");
+            /*alert("PLease select exact 24 qualities");*/
+            $("Sub").prop('disabled', true);
         }
         else if(Sub==3)
         {
@@ -427,7 +433,7 @@ $(document).ready(function(){
             {
                 alert("Your qualites are submitted. Now order the top 6 qualites");
                 Sub++;
-                document.getElementById("Selection_count").textContent="Order top 6 qualites by giving top most quality the highest priority";
+                document.getElementById("Selection_count").textContent="Order your qualities ";
                 document.getElementById("Selection_count").style.height="25%";
                 document.getElementById("Selection_count").style.textAlign="center";
                 document.getElementById("Selection_count").style.padding="5px";
@@ -453,7 +459,8 @@ $(document).ready(function(){
                 }
             }
             else
-            alert("PLease select exact 6 qualities");
+            /*alert("PLease select exact 6 qualities");*/
+            $("Sub").prop('disabled', true);
         }
         else
         {
@@ -486,4 +493,5 @@ $(document).ready(function(){
 $(function() {
     $( "#sortable_quality" ).sortable();
 });
+
 

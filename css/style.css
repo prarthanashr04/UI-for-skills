@@ -64,7 +64,7 @@ a{
 }
 .Qual{
     margin:10px;
-    background-color:#5890c4;
+    background-color:rgb(30, 90, 255);
     text-align:center;
     width:20%;
     display : inline;
@@ -80,7 +80,7 @@ a{
         overflow-x:hidden;
         padding:10px;
         margin:4px 4px;
-        min-height:75%;
+        height:100%;
         
     }
     .btn-group{
@@ -118,7 +118,7 @@ a{
 
     .Qual{
         margin:2px;
-        background-color: #5890c4;
+        background-color:rgb(30, 90, 255);
         text-align:center;
         width:100%;
     }
