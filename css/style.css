@@ -1,9 +1,11 @@
+
 #Selection_count {
     background-color: dodgerblue;
     text-align: right;
     color: white;
     padding-top: 15px;
     height: 80px;
+    font-size:xx-large;
 }
 #quality {
     background-color: black;
@@ -11,9 +13,11 @@
     text-align: center;
     height: 80px;
     padding-top: 15px;
+    font-size:xx-large ;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #Quality_desc{
-    background-color: grey;
+    background-color: black;
     height:220px;
     color:white;
     text-align: center;

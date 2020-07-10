@@ -177,30 +177,6 @@ var file_source=[
         '1'
     ],
     [
-        'Beauty',
-        'a combination of qualities, such as shape, colour, or form, that pleases the aesthetic senses, especially the sight. Eg-"I was struck by her beauty"',
-        '0',
-        '1'
-    ],
-    [
-        'Beauty',
-        'a combination of qualities, such as shape, colour, or form, that pleases the aesthetic senses, especially the sight. Eg-"I was struck by her beauty"',
-        '0',
-        '1'
-    ],
-    [
-        'Beauty',
-        'a combination of qualities, such as shape, colour, or form, that pleases the aesthetic senses, especially the sight. Eg-"I was struck by her beauty"',
-        '0',
-        '1'
-    ],
-    [
-        'Beauty',
-        'a combination of qualities, such as shape, colour, or form, that pleases the aesthetic senses, especially the sight. Eg-"I was struck by her beauty"',
-        '0',
-        '1'
-    ],
-    [
         '',
         '',
         '0',
