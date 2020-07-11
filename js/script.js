@@ -311,7 +311,7 @@ $(document).ready(function(){
             $("Sub").prop('disabled', true);
             else if(count==24)
             {
-                alert("Your qualites are submitted, Now please select exact 6 qualities");
+                
                 count=0;
                 Sub=Sub+2;
                 document.getElementById("Selection_count").textContent=count+fcount();
@@ -340,7 +340,7 @@ $(document).ready(function(){
             }
             else
             {
-                alert("Your qualites are submitted, Now please select exact 24 qualities");
+                
                 count=0;
                 Sub++;
                 document.getElementById("Selection_count").textContent=count+fcount();
@@ -372,7 +372,7 @@ $(document).ready(function(){
         {
             if(count==24)
             {
-                alert("Your qualites are submitted, Now please select exact 6 qualities");
+                
                 count=0;
                 Sub++;
                 document.getElementById("Selection_count").textContent=count+fcount();
@@ -407,7 +407,7 @@ $(document).ready(function(){
         {
             if(count==6)
             {
-                alert("Your qualites are submitted. Now order the top 6 qualites");
+                
                 Sub++;
                 document.getElementById("Selection_count").textContent="Order your qualities ";
                 document.getElementById("Selection_count").style.height="25%";
@@ -448,7 +448,7 @@ $(document).ready(function(){
     $("#Sub2").click(function(){
         if(Sub==4)
         {
-            alert("Congratulations, your qualities are submitted");
+            
             document.getElementById("Selection_count").textContent="Your top qualities are shown below";
             var x = document.getElementById("orderit");
             x.style.display = "none";

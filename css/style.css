@@ -1,6 +1,6 @@
 
 #Selection_count {
-    background-color: dodgerblue;
+    background-color: rgb(90, 90, 90);
     text-align: right;
     color: white;
     padding-top: 15px;
@@ -66,7 +66,7 @@
 }
 .Qual{
     margin:10px;
-    background-color:rgb(30, 90, 255);
+    background-color:black;
     text-align:center;
     width:20%;
     display : inline;
@@ -91,7 +91,9 @@
     }
 
     #Selection_count{
-        height:60px;
+        height:50px;
+        padding-top:5px;
+        font-size:x-large;
     }
 
     #quality{
@@ -109,7 +111,7 @@
     
     .Qual{
         margin:2px;
-        background-color:rgb(30, 90, 255);
+        
         text-align:center;
         width:100%;
     }
